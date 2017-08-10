@@ -1,0 +1,36 @@
+belongs_to (a un autor)
+has_one (dato unico)
+has_many (mas de una dato un mismo elemento)
+has_many:through
+has_one;through
+has_one_belongs_to_many (ej wikipedia. pertenece a muchos usuario, todos pueden colaborar)
+
+Generos , Artista y canciones
+
+
+crea scaffold  siempre definir los nombre de las tablas en singular, la primera en mayuscula solo por buena practica)
+rails  g scaffold Genre name:string
+rails  g scaffold Artist name:string genre_id:integer
+rails  g scaffold Song name:string genre_id:integer artist_id:integer
+
+Luego de crear las tablas ejecutar
+rake db:migrate
+
+Conexion a Github
+git init
+git add .  (. es todo)
+git commit -m "scaffolds ok"
+git remote add origin https://github.com/tocornal/musicapp.git   (crear en el directorio de git. SE HACE SOLO LA PRIMERA VEZ)
+git push -u origin master  (conecte comado sube toda la informacion)
+
+actualizar nueva info de Github
+git status  (muestra los archivos modificados)
+git commit -m "gem start"
+git push -u origin master (Vuelve a cargar los datos a git)
+
+Como agregar stylos
+en archivo gemfile escribir gem 'starter_generators'  (las gemas se muestran en verde cuando se instalan)
+bundle install (instala los estilos)
+rails g starter:style amelia (carga un estilo, da error de overwrite. poner Y)
+
+Editar archivo routes.rb esto es para modificar la pag de inicio
